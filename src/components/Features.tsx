@@ -125,15 +125,17 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
         @media (max-width: 900px) {
             .editorial-section {
                 flex-direction: column;
-                padding: 2rem;
-                gap: 3rem;
+                padding: 3rem 1.5rem; /* Reduced from 2rem */
+                gap: 2rem; /* Reduced from 3rem */
+                min-height: auto; /* CRITICAL: Removes the 100vh gap */
             }
             .editorial-section.reverse {
                 flex-direction: column;
             }
             .editorial-image-container {
                 width: 100%;
-                height: 50vh;
+                height: auto; /* flexible height */
+                aspect-ratio: 1.5;
             }
             .editorial-content {
                 width: 100%;
@@ -436,8 +438,8 @@ const Features = () => {
         @media (max-width: 768px) {
           .banner-grid-mini { gap: 2rem; }
           .banner-divider-mini { display: none; }
+          .intro-promotion { padding: 4rem 1.5rem; } /* Reduced from 6rem */
         }
-          .intro-promotion { padding: 6rem 2rem; }
         }
 
         /* Bathroom Section Styles */
@@ -467,14 +469,17 @@ const Features = () => {
         }
         
         @media (max-width: 900px) {
-          .bathroom-grid {
-            grid-template-columns: 1fr;
-            gap: 4rem;
+          .terrace-section, .bathroom-section {
+             padding: 4rem 1.5rem; /* Reduced from 10rem */
           }
-          .bathroom-image {
+          .terrace-grid, .bathroom-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .bathroom-image, .terrace-collage {
             order: 2;
           }
-          .bathroom-content {
+          .bathroom-content, .terrace-content {
             order: 1;
           }
         }

@@ -1,0 +1,32 @@
+/* src/styles/variables.css - Update for richer palette */
+:root {
+  /* Colors - Deep Luxury */
+  --color-gold: #C5A059;
+  /* More metallic/bronze */
+  --color-gold-light: #E5C585;
+  --color-gold-dark: #8A6D3B;
+
+  --color-dark: #050505;
+  /* True Black */
+  --color-dark-light: #121212;
+  --color-charcoal: #1c1c1c;
+
+  --color-white: #FFFFFF;
+  --color-gray: #888888;
+
+  --color-bg: var(--color-dark);
+  --color-text: var(--color-white);
+
+  /* Typography - Editorial Scale */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  --size-h1: clamp(3.5rem, 8vw, 7rem);
+  /* Massive Headlines */
+  --size-h2: clamp(2.5rem, 5vw, 4.5rem);
+  --size-h3: clamp(1.5rem, 3vw, 2.5rem);
+
+  /* Animations */
+  --ease-editorial: cubic-bezier(0.19, 1, 0.22, 1);
+  /* Expo Ease */
+}

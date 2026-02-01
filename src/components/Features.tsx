@@ -440,7 +440,6 @@ const Features = () => {
           .banner-divider-mini { display: none; }
           .intro-promotion { padding: 4rem 1.5rem; } /* Reduced from 6rem */
         }
-        }
 
         /* Bathroom Section Styles */
         .bathroom-section {

@@ -125,9 +125,9 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
         @media (max-width: 900px) {
             .editorial-section {
                 flex-direction: column;
-                padding: 3rem 1.5rem; /* Reduced from 2rem */
-                gap: 2rem; /* Reduced from 3rem */
-                min-height: auto; /* CRITICAL: Removes the 100vh gap */
+                padding: 1.5rem 1.5rem; /* Aggressively reduced from 3rem */
+                gap: 1.5rem; /* Reduced from 2rem */
+                min-height: auto;
             }
             .editorial-section.reverse {
                 flex-direction: column;
@@ -438,7 +438,7 @@ const Features = () => {
         @media (max-width: 768px) {
           .banner-grid-mini { gap: 2rem; }
           .banner-divider-mini { display: none; }
-          .intro-promotion { padding: 4rem 1.5rem; } /* Reduced from 6rem */
+          .intro-promotion { padding: 1.5rem 1.5rem; } /* Aggressively reduced from 4rem */
         }
 
         /* Bathroom Section Styles */
@@ -469,7 +469,7 @@ const Features = () => {
         
         @media (max-width: 900px) {
           .terrace-section, .bathroom-section {
-             padding: 4rem 1.5rem; /* Reduced from 10rem */
+             padding: 1.5rem 1.5rem; /* Aggressively reduced from 4rem */
           }
           .terrace-grid, .bathroom-grid {
             grid-template-columns: 1fr;

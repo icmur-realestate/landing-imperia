@@ -13,7 +13,7 @@ const SCHEDULE_CONFIG = {
     endMinute: 30,
     slotDuration: 60, // minutes
     // Explicit slots to make it cleaner given the narrow window
-    slots: ["17:30", "18:30"]
+    slots: ["17:15", "18:15", "19:15"]
 };
 
 interface BookingState {
@@ -38,16 +38,16 @@ const BookingWidget = () => {
     const [availableDays, setAvailableDays] = useState<Date[]>([]);
 
     useEffect(() => {
-        // Generate next 14 days
+        // Genera automáticamente los próximos 14 días a partir de HOY
         const days: Date[] = [];
         const today = new Date();
 
         for (let i = 0; i < 14; i++) {
             const date = new Date(today);
             date.setDate(today.getDate() + i);
-            const dayOfWeek = date.getDay(); // 0 = Sun, 1 = Mon, etc.
+            const dayOfWeek = date.getDay(); // 0 = Dom, 1 = Lun, etc.
 
-            // Filter enabled days (Mon-Thu)
+            // Solo añade los días habilitados en la configuración (Lunes a Jueves)
             if (SCHEDULE_CONFIG.days.includes(dayOfWeek)) {
                 days.push(date);
             }
@@ -139,7 +139,6 @@ const BookingWidget = () => {
                                             onClick={() => handleSlotSelect(slot)}
                                         >
                                             <span className="slot-time">{slot}</span>
-                                            <span className="slot-duration">60 min</span>
                                         </button>
                                     ))
                                 )}

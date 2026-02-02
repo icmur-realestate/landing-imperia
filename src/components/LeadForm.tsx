@@ -181,7 +181,13 @@ const LeadForm = () => {
 
         .lead-text h2 {
           margin: var(--spacing-sm) 0;
-          font-size: 3rem;
+          font-size: 2.5rem; /* Better for mobile */
+        }
+
+        @media (min-width: 900px) {
+            .lead-text h2 {
+                font-size: 3rem;
+            }
         }
 
         .lead-text p {
@@ -192,12 +198,18 @@ const LeadForm = () => {
 
         .lead-form {
           background: var(--color-dark-light);
-          padding: 3rem;
+          padding: 2rem 1.5rem; /* Reduced for mobile */
           border-radius: var(--radius-sm);
           border: 1px solid rgba(255,255,255,0.05);
           width: 100%;
           max-width: 700px;
           margin: 0 auto;
+        }
+
+        @media (min-width: 900px) {
+            .lead-form {
+                padding: 3rem;
+            }
         }
 
         .form-group {

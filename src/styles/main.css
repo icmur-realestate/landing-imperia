@@ -52,7 +52,13 @@ button {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    padding: 0 1.5rem; /* Better default for mobile */
+}
+
+@media (min-width: 900px) {
+    .container {
+        padding: 0 var(--spacing-sm, 2rem);
+    }
 }
 
 .text-gold {

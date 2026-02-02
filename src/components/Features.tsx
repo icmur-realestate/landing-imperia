@@ -77,12 +77,20 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
 
         .image-number {
             position: absolute;
-            top: -4rem;
-            left: -2rem;
-            font-size: 8rem;
+            top: -2rem; /* Adjusted for mobile */
+            left: -1rem;
+            font-size: 4rem; /* Smaller for mobile */
             font-family: var(--font-serif);
             color: rgba(255,255,255,0.05);
             z-index: -1;
+        }
+
+        @media (min-width: 900px) {
+            .image-number {
+                top: -4rem;
+                left: -2rem;
+                font-size: 8rem;
+            }
         }
 
         .editorial-content {
@@ -100,16 +108,30 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
 
         .editorial-title {
             font-family: var(--font-serif);
-            font-size: 3.5rem;
-            line-height: 1;
+            font-size: 2.2rem; /* Scaled for mobile */
+            line-height: 1.1;
             margin-bottom: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .editorial-title {
+                font-size: 3.5rem;
+                line-height: 1;
+            }
         }
 
         .editorial-text {
             color: var(--color-gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem; /* Slightly smaller for mobile */
+            line-height: 1.6;
             margin-bottom: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .editorial-text {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
         }
 
         .btn-link {
@@ -237,7 +259,7 @@ const Features = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="btn-cta-gold"
-            onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+            onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
           >
             AGENDAR VISITA PRIVADA
           </motion.button>

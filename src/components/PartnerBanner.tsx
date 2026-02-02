@@ -183,8 +183,28 @@ const PartnerBanner = () => {
                     .pyramid-bottom > .partner-group:last-child { padding-left: 1.5rem; }
                     .cooperativa { height: 180px; }
                     .icmur { height: 260px; }
-                    .navarro { height: 260px; } /* Equal height for tablet */
+                    .navarro { height: 260px; }
                     .partner-divider { height: 260px; }
+                }
+
+                @media (max-width: 768px) {
+                    .pyramid-bottom {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 3rem;
+                    }
+                    .pyramid-bottom > .partner-group:first-child,
+                    .pyramid-bottom > .partner-group:last-child {
+                        padding: 0;
+                        justify-content: center;
+                    }
+                    .partner-divider {
+                        display: none;
+                    }
+                    .cooperativa { height: 120px; }
+                    .icmur { height: 180px; }
+                    .navarro { height: 180px; }
+                    .partner-tag { font-size: 0.8rem; }
                 }
             `}</style>
         </section>

@@ -198,7 +198,7 @@ const InteractiveFloorPlans = () => {
     <section className="plans-section container">
       <div className="text-center mb-xl">
         <span className="text-gold text-uppercase tracking-widest">TIPOLOGÍAS</span>
-        <h2 className="mt-sm" style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem' }}>ENCUENTRA TU ESPACIO</h2>
+        <h2 className="mt-sm" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5vw, 3rem)' }}>ENCUENTRA TU ESPACIO</h2>
       </div>
 
       <div className="plans-grid">

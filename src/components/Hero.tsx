@@ -59,7 +59,7 @@ const Hero = () => {
         >
           <button
             className="btn-editorial"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
           >
             EXPERIENCIA IMPERIA
           </button>
@@ -158,10 +158,17 @@ const Hero = () => {
 
         .hero-title {
           font-family: var(--font-serif);
-          font-size: var(--size-h1);
-          line-height: 0.9;
+          font-size: var(--size-h2); /* Smaller by default or h2 */
+          line-height: 1;
           margin-bottom: 3rem;
           color: white;
+        }
+
+        @media (min-width: 900px) {
+          .hero-title {
+            font-size: var(--size-h1);
+            line-height: 0.9;
+          }
         }
 
         .block {
@@ -196,17 +203,24 @@ const Hero = () => {
         .btn-editorial {
             background: white;
             color: black;
-            padding: 1rem 3rem;
+            padding: 1rem 1.5rem; /* Reduced for mobile */
             font-family: var(--font-sans);
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
             border: none;
             transition: transform 0.3s;
+            font-size: 0.85rem;
         }
 
-        .btn-editorial:hover {
-            transform: scale(1.05);
+        @media (min-width: 900px) {
+            .btn-editorial {
+                padding: 1rem 3rem;
+                font-size: 1rem;
+            }
+            .btn-editorial:hover {
+                transform: scale(1.05);
+            }
         }
 
         .video-trigger {

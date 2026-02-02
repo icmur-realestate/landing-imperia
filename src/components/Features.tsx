@@ -302,9 +302,8 @@ const Features = () => {
           La memoria de calidades completa y el dossier se enviarán directamente a su email tras completar el formulario.
         </p>
         <button
-          className="btn-link"
+          className="btn-cta-gold"
           onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          style={{ fontSize: '1rem', borderBottom: '1px solid var(--color-gold)', paddingBottom: '5px' }}
         >
           SOLICITAR DOSSIER Y MEMORIA
         </button>

@@ -36,7 +36,7 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
         <h4 className="editorial-subtitle">{subtitle}</h4>
         <h2 className="editorial-title">{title}</h2>
         <p className="editorial-text">{description}</p>
-        <button className="btn-link">VER ESPACIO</button>
+
       </motion.div>
 
       <style>{`
@@ -134,15 +134,7 @@ const FeatureItem = ({ title, subtitle, description, image, idx }: FeatureItemPr
             }
         }
 
-        .btn-link {
-            background: none;
-            color: white;
-            border-bottom: 1px solid var(--color-gold);
-            padding-bottom: 5px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+
 
         @media (max-width: 900px) {
             .editorial-section {

@@ -20,6 +20,15 @@ const LeadForm = () => {
     setStatus('submitting');
 
     try {
+      if (formData.interest === 'Visita Concertada') {
+        const element = document.getElementById('agenda');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setStatus('idle');
+          return;
+        }
+      }
+
       // Connect to CRM
       const pb = new PocketBase('https://imperia-crm.161.97.120.36.nip.io');
 
@@ -32,6 +41,15 @@ const LeadForm = () => {
       };
 
       await pb.collection('leads_imperia').create(data);
+
+      // Solo enviar a n8n si es Información General
+      if (formData.interest === 'Información General') {
+        fetch('https://automatizacionesn8n-n8n.m9d72s.easypanel.host/webhook/imperia-leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).catch(err => console.error("Error sincronización n8n:", err));
+      }
 
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', interest: 'Información General' });
@@ -136,7 +154,6 @@ const LeadForm = () => {
                   onChange={handleChange}
                 >
                   <option>Información General</option>
-                  <option>Solicitar Planos</option>
                   <option>Visita Concertada</option>
                 </select>
               </div>

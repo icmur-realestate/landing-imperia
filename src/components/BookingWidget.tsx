@@ -85,6 +85,13 @@ const BookingWidget = () => {
 
             await pb.collection('citas_imperia').create(data);
 
+            // Notificación n8n para validación manual
+            fetch('https://automatizacionesn8n-n8n.m9d72s.easypanel.host/webhook/imperia-leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...data, type: 'visita_concertada' })
+            }).catch(err => console.error("Error notificación n8n cita:", err));
+
             // Show success step
             setState(prev => ({ ...prev, step: 3 }));
 

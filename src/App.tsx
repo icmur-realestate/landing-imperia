@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import InteractiveFloorPlans from './components/InteractiveFloorPlans'
@@ -24,6 +24,22 @@ function App() {
         setLegalModal({ isOpen: true, type });
     };
 
+    // Detectar hash #reserva y hacer scroll al calendario
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash === '#reserva') {
+            // Esperar a que el DOM esté completamente cargado
+            setTimeout(() => {
+                const element = document.getElementById('reserva');
+                if (element) {
+                    const yOffset = -100; // Offset para header fijo
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 500);
+        }
+    }, []);
+
     return (
         <div className="app-container">
             <Header />
@@ -34,7 +50,9 @@ function App() {
 
                 <InteractiveFloorPlans />
 
-                <BookingWidget />
+                <div id="reserva" style={{ scrollMarginTop: '100px' }}>
+                    <BookingWidget />
+                </div>
 
                 <div id="contact">
                     <LeadForm />
